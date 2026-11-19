@@ -1,0 +1,32 @@
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+.env.*
+
+# Dataset files
+data/raw/
+data/interim/
+data/processed/
+
+# Model artifacts
+models/*.joblib
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Generated reports
+monitoring/reports/
+
+# Temporary files
+*.log
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/

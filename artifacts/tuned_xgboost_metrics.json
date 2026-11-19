@@ -1,0 +1,22 @@
+{
+    "model": "Tuned XGBRegressor",
+    "training_records": 2567553,
+    "parameters": {
+        "n_estimators": 500,
+        "max_depth": 6,
+        "learning_rate": 0.03,
+        "min_child_weight": 3,
+        "subsample": 1.0,
+        "colsample_bytree": 0.8
+    },
+    "validation": {
+        "MAE": 110.70756281457854,
+        "RMSE": 328.32278416924396,
+        "R2": 0.21496154609672313
+    },
+    "test": {
+        "MAE": 125.23415965784302,
+        "RMSE": 349.3936022391961,
+        "R2": 0.19401242647335126
+    }
+}

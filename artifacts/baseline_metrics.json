@@ -1,0 +1,27 @@
+{
+    "model": "DummyRegressor",
+    "strategy": "median",
+    "features": [
+        "city",
+        "region_id",
+        "aoi_type",
+        "accept_hour",
+        "accept_dayofweek",
+        "accept_month",
+        "distance_km",
+        "lat",
+        "lng"
+    ],
+    "validation": {
+        "dataset": "VALIDATION",
+        "MAE": 121.3272110306649,
+        "RMSE": 377.11044538107615,
+        "R2": -0.03568100333665969
+    },
+    "test": {
+        "dataset": "TEST",
+        "MAE": 129.97047431769403,
+        "RMSE": 397.2827849463769,
+        "R2": -0.042072517909111484
+    }
+}

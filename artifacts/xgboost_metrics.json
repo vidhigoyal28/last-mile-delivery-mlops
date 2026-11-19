@@ -1,0 +1,20 @@
+{
+    "model": "XGBRegressor",
+    "parameters": {
+        "n_estimators": 300,
+        "learning_rate": 0.05,
+        "max_depth": 8,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    "validation": {
+        "MAE": 109.09465198838689,
+        "RMSE": 325.62075485772357,
+        "R2": 0.22782978739317672
+    },
+    "test": {
+        "MAE": 124.71268201331964,
+        "RMSE": 350.0253098949796,
+        "R2": 0.19109532214979752
+    }
+}

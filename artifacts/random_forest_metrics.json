@@ -1,0 +1,19 @@
+{
+    "model": "RandomForestRegressor",
+    "parameters": {
+        "n_estimators": 100,
+        "max_depth": 12,
+        "min_samples_leaf": 10,
+        "max_features": 0.7
+    },
+    "validation": {
+        "MAE": 109.32214132464921,
+        "RMSE": 326.00203683387406,
+        "R2": 0.22602040054714312
+    },
+    "test": {
+        "MAE": 125.31459731309437,
+        "RMSE": 350.64653144229146,
+        "R2": 0.1882215017404547
+    }
+}

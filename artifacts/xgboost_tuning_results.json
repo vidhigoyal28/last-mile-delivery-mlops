@@ -1,0 +1,76 @@
+{
+    "experiments": [
+        {
+            "experiment": 5,
+            "validation_MAE": 111.65727572335379,
+            "parameters": {
+                "n_estimators": 500,
+                "max_depth": 6,
+                "learning_rate": 0.03,
+                "min_child_weight": 3,
+                "subsample": 1.0,
+                "colsample_bytree": 0.8
+            }
+        },
+        {
+            "experiment": 3,
+            "validation_MAE": 111.6969254733085,
+            "parameters": {
+                "n_estimators": 300,
+                "max_depth": 8,
+                "learning_rate": 0.05,
+                "min_child_weight": 5,
+                "subsample": 0.8,
+                "colsample_bytree": 0.8
+            }
+        },
+        {
+            "experiment": 4,
+            "validation_MAE": 112.00610536398143,
+            "parameters": {
+                "n_estimators": 300,
+                "max_depth": 8,
+                "learning_rate": 0.03,
+                "min_child_weight": 7,
+                "subsample": 0.8,
+                "colsample_bytree": 0.8
+            }
+        },
+        {
+            "experiment": 2,
+            "validation_MAE": 112.54867140672638,
+            "parameters": {
+                "n_estimators": 300,
+                "max_depth": 6,
+                "learning_rate": 0.05,
+                "min_child_weight": 5,
+                "subsample": 0.8,
+                "colsample_bytree": 0.8
+            }
+        },
+        {
+            "experiment": 1,
+            "validation_MAE": 112.82039751384038,
+            "parameters": {
+                "n_estimators": 200,
+                "max_depth": 6,
+                "learning_rate": 0.05,
+                "min_child_weight": 5,
+                "subsample": 0.8,
+                "colsample_bytree": 0.8
+            }
+        }
+    ],
+    "best_configuration": {
+        "experiment": 5,
+        "validation_MAE": 111.65727572335379,
+        "parameters": {
+            "n_estimators": 500,
+            "max_depth": 6,
+            "learning_rate": 0.03,
+            "min_child_weight": 3,
+            "subsample": 1.0,
+            "colsample_bytree": 0.8
+        }
+    }
+}
