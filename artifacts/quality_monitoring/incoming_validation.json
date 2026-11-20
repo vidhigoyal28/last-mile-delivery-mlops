@@ -1,0 +1,37 @@
+{
+    "dataset_size": 100000,
+    "required_columns": [
+        "city",
+        "region_id",
+        "aoi_type",
+        "accept_hour",
+        "accept_dayofweek",
+        "accept_month",
+        "distance_km",
+        "lat",
+        "lng",
+        "target_duration"
+    ],
+    "missing_values": {
+        "city": 0,
+        "region_id": 0,
+        "aoi_type": 0,
+        "accept_hour": 0,
+        "accept_dayofweek": 0,
+        "accept_month": 0,
+        "distance_km": 28,
+        "lat": 0,
+        "lng": 0,
+        "target_duration": 0
+    },
+    "missing_feature_values_handled_by_imputer": 28,
+    "duplicate_records": 0,
+    "invalid_target_records": 0,
+    "target_summary": {
+        "mean": 188.71968,
+        "median": 105.0,
+        "min": 0.0,
+        "max": 10041.0
+    },
+    "validation_passed": true
+}

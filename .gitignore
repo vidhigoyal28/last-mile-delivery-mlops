@@ -30,3 +30,17 @@ monitoring/reports/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Incoming assessment data
+data/
+
+# Candidate model artifacts
+models/candidates/
+
+# Quality monitoring reports and decisions
+!artifacts/
+!artifacts/quality_monitoring/
+!artifacts/quality_monitoring/*.json
+!reports/
+!reports/quality_gate/
+!reports/quality_gate/*.json

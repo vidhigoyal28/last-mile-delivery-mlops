@@ -1,0 +1,7 @@
+{
+    "model_name": "candidate_xgboost",
+    "evaluation_records": 20000,
+    "MAE": 124.47955886859894,
+    "RMSE": 366.9352726018627,
+    "R2": 0.19296163833863234
+}

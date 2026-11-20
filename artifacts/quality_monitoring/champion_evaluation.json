@@ -1,0 +1,7 @@
+{
+    "model_name": "champion_tuned_xgboost",
+    "evaluation_records": 20000,
+    "MAE": 126.40579398965835,
+    "RMSE": 371.38834626945845,
+    "R2": 0.17325457567879188
+}

@@ -1,0 +1,9 @@
+{
+    "model_name": "candidate_xgboost",
+    "original_training_records": 2567553,
+    "incoming_training_records": 80000,
+    "combined_training_records": 2647553,
+    "training_duration_seconds": 56.95,
+    "candidate_model_path": "models\\candidates\\candidate_xgboost_model.joblib",
+    "status": "trained"
+}

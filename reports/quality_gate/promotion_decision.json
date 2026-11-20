@@ -1,0 +1,28 @@
+{
+    "timestamp_utc": "2026-11-20T05:11:33.695040+00:00",
+    "champion_model": "champion_tuned_xgboost",
+    "candidate_model": "candidate_xgboost",
+    "evaluation_records": 20000,
+    "champion_metrics": {
+        "MAE": 126.40579398965835,
+        "RMSE": 371.38834626945845,
+        "R2": 0.17325457567879188
+    },
+    "candidate_metrics": {
+        "MAE": 124.47955886859894,
+        "RMSE": 366.9352726018627,
+        "R2": 0.19296163833863234
+    },
+    "mae_improvement_percent": 1.523850339658479,
+    "rmse_change_percent": -1.1990343025908605,
+    "r2_difference": 0.019707062659840457,
+    "quality_checks": {
+        "same_evaluation_records": true,
+        "mae_improved_by_at_least_1_percent": true,
+        "rmse_not_worse_by_more_than_2_percent": true,
+        "r2_not_lower_by_more_than_0.01": true
+    },
+    "promotion_eligible": true,
+    "decision": "CANDIDATE_ELIGIBLE_FOR_PROMOTION",
+    "champion_overwritten": false
+}
