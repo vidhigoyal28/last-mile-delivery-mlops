@@ -1,13 +1,21 @@
 # 🚚 An MLOps-Based Last-Mile Delivery Duration Prediction System
 
-**An end-to-end Machine Learning and MLOps project for predicting last-mile delivery duration using XGBoost, MLflow, FastAPI, Docker, GitHub Actions, and AWS ECR.**
+### An End-to-End Machine Learning and MLOps Project Using XGBoost, MLflow, FastAPI, Docker, GitHub Actions and AWS ECR
 
-[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-success?logo=githubactions)](https://github.com/vidhigoyal28/last-mile-delivery-mlops/actions)
-[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)](https://www.python.org/)
-[![XGBoost](https://img.shields.io/badge/ML-XGBoost-orange)](https://xgboost.readthedocs.io/)
-[![MLflow](https://img.shields.io/badge/Experiment%20Tracking-MLflow-blue)](https://mlflow.org/)
-[![Docker](https://img.shields.io/badge/Containerization-Docker-blue?logo=docker)](https://www.docker.com/)
-[![AWS](https://img.shields.io/badge/Cloud-AWS%20ECR-orange?logo=amazonaws)](https://aws.amazon.com/ecr/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python" alt="Python"/>
+  <img src="https://img.shields.io/badge/Machine%20Learning-XGBoost-orange" alt="XGBoost"/>
+  <img src="https://img.shields.io/badge/Experiment%20Tracking-MLflow-blue" alt="MLflow"/>
+  <img src="https://img.shields.io/badge/API-FastAPI-green?logo=fastapi" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/Containerization-Docker-blue?logo=docker" alt="Docker"/>
+  <img src="https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-success?logo=githubactions" alt="GitHub Actions"/>
+  <img src="https://img.shields.io/badge/Cloud-AWS%20ECR-orange?logo=amazonaws" alt="AWS ECR"/>
+</p>
+
+<p align="center">
+  <a href="https://github.com/vidhigoyal28/last-mile-delivery-mlops/actions">View GitHub Actions</a> |
+  <a href="https://github.com/vidhigoyal28/last-mile-delivery-mlops">GitHub Repository</a>
+</p>
 
 ---
 
@@ -19,34 +27,39 @@ Accurately predicting delivery duration is important for improving logistics pla
 
 This project develops a Machine Learning-based system that predicts delivery duration using historical courier delivery information, geographical features, delivery regions, and temporal patterns.
 
-The project goes beyond traditional model development by implementing an end-to-end MLOps workflow that includes:
+Beyond traditional model development, the project implements an MLOps workflow to manage the complete model lifecycle, including data validation, model training, experiment tracking, evaluation, retraining, and controlled model promotion.
 
-- Data validation and preprocessing.
-- Feature engineering.
-- Machine Learning model training.
-- Experiment tracking using MLflow.
-- Model evaluation and comparison.
-- Candidate model retraining.
-- Automated quality-gate evaluation.
-- API-based model inference.
+The project also integrates Docker, GitHub Actions, and Amazon Elastic Container Registry (ECR) to automate testing, container image building, and publishing.
+
+### Key Highlights
+
+- Large-scale delivery data processing.
+- XGBoost-based delivery duration prediction.
+- Reusable Scikit-learn preprocessing pipeline.
+- MLflow experiment tracking.
+- Incoming data validation.
+- Champion and candidate model evaluation.
+- Automated candidate retraining.
+- Quality-gate-based model promotion.
+- FastAPI inference service.
 - Docker containerization.
-- CI/CD automation using GitHub Actions.
-- Container image management using AWS ECR.
+- GitHub Actions CI/CD automation.
+- AWS ECR integration for Docker image publishing.
 
 ## 🎯 2. Project Objectives
 
 - Predict last-mile delivery duration using historical delivery records.
 - Develop a reliable regression model using XGBoost.
 - Implement reusable preprocessing and training pipelines.
-- Track model experiments and training using MLflow.
-- Validate incoming delivery data before model retraining.
+- Track experiments and training using MLflow.
+- Validate incoming delivery data before retraining.
 - Evaluate the existing champion model on incoming labelled data.
-- Retrain a candidate model using additional training records.
+- Retrain candidate models using additional training records.
 - Compare champion and candidate model performance.
 - Implement a quality gate for controlled model promotion.
 - Containerize the application using Docker.
-- Integrate CI/CD workflows using GitHub Actions.
-- Store Docker images in Amazon Elastic Container Registry (ECR).
+- Automate testing and image publishing using GitHub Actions.
+- Integrate AWS ECR for container image management.
 
 ## 📊 3. Dataset
 
@@ -121,7 +134,7 @@ The project uses a Scikit-learn Pipeline that combines preprocessing transformat
 
 **ColumnTransformer**
 
-`ColumnTransformer` applies the appropriate preprocessing operations to numerical and categorical feature groups.
+`ColumnTransformer` applies appropriate preprocessing operations to numerical and categorical feature groups.
 
 This ensures that the same transformations are applied consistently during training and inference.
 
@@ -150,7 +163,7 @@ The model is evaluated using three regression metrics.
 
 **Mean Absolute Error (MAE)**
 
-Measures the average absolute difference between actual and predicted delivery duration.
+Measures the average absolute difference between actual and predicted delivery durations.
 
 **Root Mean Squared Error (RMSE)**
 
@@ -199,7 +212,7 @@ Missing feature values are allowed because the preprocessing pipeline includes i
 
 - Load the original training dataset.
 - Combine original training records with incoming training records.
-- Clone the existing champion pipeline.
+- Clone the existing champion preprocessing and model pipeline.
 - Retrain the candidate model.
 - Save the candidate separately.
 - Track the training experiment using MLflow.
@@ -270,7 +283,7 @@ The quality gate marked the candidate as eligible for promotion. The existing ch
 
 ## 📊 9. MLflow Experiment Tracking
 
-MLflow is integrated to track model training experiments.
+MLflow is integrated to track candidate model training experiments.
 
 It helps maintain:
 
@@ -286,7 +299,7 @@ To start the MLflow UI locally:
 mlflow ui --backend-store-uri sqlite:///mlflow.db --host 127.0.0.1 --port 5000
 ```
 
-Open the following address:
+Open:
 
 ```text
 http://127.0.0.1:5000
@@ -300,7 +313,7 @@ The API loads the saved champion model pipeline and provides an interface for ge
 
 The complete preprocessing and prediction pipeline is reused during inference, ensuring consistency between model training and prediction.
 
-API implementation: `api/main.py`
+**API implementation:** `api/main.py`
 
 ## 🐳 11. Docker Containerization
 
@@ -330,60 +343,77 @@ docker run -p 8000:8000 last-mile-delivery-mlops
 
 ## ☁️ 12. AWS ECR Integration
 
-Amazon Elastic Container Registry (AWS ECR) is used as the container image registry for storing Docker images.
+The project integrates **Amazon Elastic Container Registry (AWS ECR)** with GitHub Actions to automate Docker image publishing.
 
-The integration supports the following workflow:
+ECR provides a managed registry for storing and managing Docker images.
 
-1. Build the Docker image.
-2. Authenticate Docker with AWS ECR.
-3. Tag the Docker image with the ECR repository URI.
-4. Push the image to the ECR repository.
-5. Maintain container image versions for subsequent deployment.
+### Automated Workflow
 
-### AWS ECR Benefits
+1. Code changes are pushed to GitHub.
+2. GitHub Actions triggers the CI/CD workflow.
+3. The test job executes.
+4. Docker builds the application image.
+5. GitHub Actions authenticates with AWS.
+6. The Docker image is tagged with the ECR repository URI.
+7. The image is pushed to Amazon ECR.
+
+### Verified CI/CD Execution
+
+The GitHub Actions workflow includes two successful jobs:
+
+| Job | Status |
+|---|---|
+| Test | SUCCESS |
+| Build and Publish to Amazon ECR | SUCCESS |
+
+The latest assessment-pipeline commit, `83dadd1`, also completed its workflow successfully.
+
+**AWS ECR integration benefits:**
 
 - Managed Docker image storage.
 - Centralized container image management.
-- Image versioning and tagging.
+- Image tagging and version management.
 - Integration with AWS container services.
-- Foundation for deploying containers using services such as Amazon ECS or EC2.
+- Foundation for subsequent cloud deployment.
 
-**Important:** ECR stores container images; it does not itself run the application. Running the application requires a separate compute service.
+**Important:** ECR stores container images; it does not itself execute the application. Running the container requires a compute service such as Amazon EC2 or Amazon ECS.
 
 ## 🔁 13. CI/CD with GitHub Actions
 
 GitHub Actions is integrated to automate the project's CI/CD workflow.
 
-The repository includes a GitHub Actions workflow for running the configured CI pipeline and Docker build process.
+The repository includes a GitHub Actions workflow that runs project tests and builds and publishes Docker images to AWS ECR.
 
 ### CI/CD Workflow
 
 1. Developer pushes code to GitHub.
 2. GitHub Actions detects the repository update.
-3. The configured CI workflow runs.
-4. Project checks and configured build steps execute.
-5. Docker image build and registry-related steps run where configured.
-6. Workflow execution status is displayed in GitHub Actions.
-
-The latest assessment-pipeline commit, `83dadd1`, completed its GitHub Actions workflow successfully.
+3. The configured test job executes.
+4. The Docker image is built.
+5. AWS authentication is performed by the workflow.
+6. The image is published to Amazon ECR.
+7. Workflow execution status is displayed in GitHub Actions.
 
 ### Benefits
 
-- Automated workflow execution.
-- Consistent build process.
+- Automated testing.
+- Consistent Docker builds.
+- Automated image publishing.
 - Faster feedback on code changes.
 - Reduced manual effort.
-- Integration with Docker and AWS ECR.
+- Integration with AWS cloud infrastructure.
 
-**Workflow status and execution history:**
+**View workflow history:**
 
-[View GitHub Actions](https://github.com/vidhigoyal28/last-mile-delivery-mlops/actions)
+[GitHub Actions — Last Mile Delivery MLOps](https://github.com/vidhigoyal28/last-mile-delivery-mlops/actions)
 
 ## 🏗️ 14. Project Architecture
 
+### Machine Learning and MLOps Architecture
+
 ```text
                  ┌──────────────────────────┐
-                 │     LaDe-D Dataset       │
+                 │      LaDe-D Dataset      │
                  │  Historical Delivery     │
                  │         Records          │
                  └────────────┬─────────────┘
@@ -437,30 +467,36 @@ The latest assessment-pipeline commit, `83dadd1`, completed its GitHub Actions w
                  ┌──────────────────────────┐
                  │  Controlled Promotion   │
                  └──────────────────────────┘
+```
 
+### CI/CD and AWS Architecture
 
-          APPLICATION AND CI/CD WORKFLOW
-
-                 ┌──────────────────────────┐
-                 │      GitHub Repository  │
-                 └────────────┬─────────────┘
-                              │
-                              ▼
-                 ┌──────────────────────────┐
-                 │     GitHub Actions      │
-                 │      CI/CD Pipeline     │
-                 └────────────┬─────────────┘
-                              │
-                              ▼
-                 ┌──────────────────────────┐
-                 │      Docker Build       │
-                 └────────────┬─────────────┘
-                              │
-                              ▼
-                 ┌──────────────────────────┐
-                 │        AWS ECR           │
-                 │   Docker Image Registry  │
-                 └──────────────────────────┘
+```text
+             ┌──────────────────────────┐
+             │     GitHub Repository    │
+             └────────────┬─────────────┘
+                          │
+                          ▼
+             ┌──────────────────────────┐
+             │     GitHub Actions       │
+             │       CI/CD Pipeline     │
+             └────────────┬─────────────┘
+                          │
+                          ▼
+             ┌──────────────────────────┐
+             │     Automated Tests      │
+             └────────────┬─────────────┘
+                          │
+                          ▼
+             ┌──────────────────────────┐
+             │       Docker Build       │
+             └────────────┬─────────────┘
+                          │
+                          ▼
+             ┌──────────────────────────┐
+             │        AWS ECR           │
+             │   Docker Image Registry  │
+             └──────────────────────────┘
 ```
 
 ## 📁 15. Project Structure
@@ -525,7 +561,7 @@ last-mile-delivery-mlops/
 └── README.md
 ```
 
-*Note: Dataset files and serialized model artifacts are maintained locally and excluded from Git where configured. This structure represents the project workspace, not necessarily every file committed to GitHub.*
+*Note: Dataset files and serialized model artifacts are maintained locally and excluded from Git where configured. This structure describes the project workspace; not every listed artifact is committed to GitHub.*
 
 ## 🚀 16. Getting Started
 
@@ -639,7 +675,7 @@ The evaluation reports and promotion decision are saved as JSON files.
 - The October test period was also used in earlier experimentation.
 - The candidate holdout was excluded from candidate training, but the broader historical data has prior experimental exposure.
 - The quality gate marks candidates as eligible for promotion but does not automatically replace the champion.
-- ECR stores container images; a separate compute service is needed to run the application.
+- AWS ECR image publishing is implemented; running the application requires a separate compute service.
 - Live production monitoring and real-time data ingestion require further integration.
 
 
